@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | RutaCero Games</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <nav id="navbar">
+      <div class="logo">
+        <img src="imagenes/logo.png" alt="RutaCero Games Logo" />
+        <h1>RutaCero Games</h1>
+      </div>
+
+      <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul id="nav-menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="games.html">Juegos</a></li>
+        <li><a href="about.html">Sobre Nosotros</a></li>
+        <li><a href="contact.html" class="active">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero contact-hero fade-in">
+      <h1>Contacto</h1>
+      <p>¿Tenés una idea, propuesta o querés hablar con nosotros? Dejanos tu mensaje.</p>
+    </section>
+
+    <section class="contact-form-section container fade-in">
+      <form id="contact-form">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="tuemail@ejemplo.com" required>
+
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" placeholder="Escribí tu mensaje aquí..." required></textarea>
+
+        <button type="submit">Enviar</button>
+        <p id="form-status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 RutaCero Games — Creado en Argentina</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const statusText = document.getElementById('form-status');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      if (!name || !email || !message) {
+        statusText.textContent = "Por favor, completá todos los campos.";
+        statusText.style.color = "tomato";
+        return;
+      }
+
+      statusText.textContent = "Mensaje enviado con éxito. ¡Gracias por contactarte!";
+      statusText.style.color = "#ffa34d";
+      form.reset();
+    });
+  </script>
+</body>
+</html>
