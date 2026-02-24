@@ -1,0 +1,467 @@
+/* =========================
+   VARIABLES DE COLOR
+   ========================= */
+:root {
+  --rojo: #b11212;
+  --rojo-oscuro: #6e0b0b;
+  --negro: #0d0d0d;
+  --blanco: #f5f5f5;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+  background: linear-gradient(135deg, var(--negro), var(--rojo-oscuro));
+  color: var(--blanco);
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 🔑 esto es clave */
+  padding: 15px 30px;
+  background: #000; /*negro solido*/
+}
+
+/* Menú */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav ul li a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--rojo);
+}
+
+.contenedor {
+  min-height: calc(100vh - 120px);
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  animation: fadeUp 1s ease;
+}
+
+
+/* Cards de juegos */
+.game-card {
+  border: 1px solid var(--rojo);
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.game-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Animación */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hamburguesa {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburguesa span {
+  width: 25px;
+  height: 3px;
+  background: var(--blanco);
+}
+
+@media (max-width: 768px) {
+
+  nav ul {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    width: 200px;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul.activo {
+    display: flex;
+  }
+
+  .hamburguesa {
+    display: flex;
+  }
+}
+
+.logo img {
+  width: 45px;        /* tamaño fijo */
+  height: auto;
+  object-fit: contain;
+}
+/* ===== SECCIONES ===== */
+section {
+  min-height: 100vh;
+  padding: 120px 20px;
+}
+
+/* Sobre nosotros */
+#sobre {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Evita que tape el header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+header {
+  height: 90px;
+}
+
+main {
+  padding-top: 90px;
+}
+.carrito-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 16px;
+  color: #fff;
+}
+
+.carrito-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.carrito-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.carrito-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  padding: 15px 20px;
+  background: #111;
+  border-radius: 12px;
+}
+
+.carrito-item .nombre {
+  font-size: 18px;
+}
+
+.carrito-item .precio {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.carrito-item .eliminar {
+  background: transparent;
+  border: none;
+  color: #ff4d4d;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.carrito-item .eliminar:hover {
+  transform: scale(1.2);
+}
+.carrito-resumen {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carrito-resumen p {
+  font-size: 20px;
+}
+
+.finalizar {
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #7a0000, #c00000);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.finalizar:hover {
+  filter: brightness(1.2);
+}
+.game-card {
+  background: #111;
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 280px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.game-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.game-card h3 {
+  margin: 15px;
+  font-size: 20px;
+}
+
+.game-card p {
+  margin: 0 15px 10px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.game-card .precio {
+  display: block;
+  margin: 0 15px 10px;
+  font-weight: bold;
+  color: var(--rojo);
+}
+
+.game-card button {
+  margin: 15px;
+  padding: 10px;
+  width: calc(100% - 30px);
+  background: linear-gradient(135deg, #7a0000, #c00000);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.game-card button:hover {
+  filter: brightness(1.2);
+}
+body {
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.8),
+      rgba(60, 0, 0, 0.8)
+    ),
+    url("img/fondo.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+/* =========================
+   CONTACTO
+   ========================= */
+
+.contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.form-contacto {
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid var(--rojo);
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 420px;
+  width: 100%;
+  margin-top: 30px;
+  box-shadow: 0 0 25px rgba(177, 18, 18, 0.3);
+}
+
+/* Inputs y textarea */
+.form-contacto input,
+.form-contacto textarea {
+  width: 100%;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 15px;
+  color: var(--blanco);
+  font-size: 14px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+/* Focus */
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+  outline: none;
+  border-color: var(--rojo);
+  box-shadow: 0 0 8px rgba(177, 18, 18, 0.6);
+}
+
+/* Botón */
+.form-contacto button {
+  background: var(--rojo);
+  color: var(--blanco);
+  border: none;
+  border-radius: 25px;
+  padding: 12px;
+  width: 100%;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.form-contacto button:hover {
+  background: var(--rojo-oscuro);
+  transform: translateY(-2px);
+}
+/* =========================
+   REDES SOCIALES
+   ========================= */
+
+.redes {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.redes .red {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #111;
+  border: 1px solid var(--rojo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.redes .red img {
+  width: 60px;
+  height: 60px;
+}
+
+/* Hover */
+.redes .red:hover {
+  transform: scale(1.25);
+  box-shadow: 0 0 15px rgba(177, 18, 18, 0.7);
+}
+/* =========================
+   SECCIÓN INICIO + SOBRE NOSOTROS
+   ========================= */
+
+.hero {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.sobre {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sobre h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--blanco);
+}
+
+.sobre p {
+  line-height: 1.6;
+  opacity: 0.9;
+}
+/* =========================
+   VISIÓN Y OBJETIVOS
+   ========================= */
+
+.vision,
+.objetivos {
+  max-width: 900px;
+  margin: 120px auto;
+  text-align: center;
+}
+
+.vision h2,
+.objetivos h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+}
+
+.vision p {
+  line-height: 1.8;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.objetivos ul {
+  list-style: none;
+  padding: 0;
+}
+
+.objetivos li {
+  font-size: 1.1rem;
+  margin: 15px 0;
+  opacity: 0.95;
+}
+/* =========================
+   HERO - TEXTO DE INICIO
+   ========================= */
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.hero-text {
+  max-width: 800px;
+  margin: 0 auto 18px auto;
+  line-height: 1.8;
+  opacity: 0.85;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #eaeaea
+}
+h1, h2, h3, h4 {
+  font-family: "Cinzel", serif;
+  letter-spacing: 1px;
+}
+h1 {
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgb(180, 0, 0, 0.4);
+}
+.precio {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--rojo);
+  margin: 10px 0;
+}

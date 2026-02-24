@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8">
+  <title>Rutacero Games | Games</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="img/logo.png" alt="Rutacero Games">
+    <span class="nombre">Rutacero Games</span>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="games.html">Juegos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="carrito">
+    <a href="carrito.html" title="Carrito">🛒</a>
+  </div>
+</header>
+
+
+
+
+  <main class="contenedor juegos">
+
+    <h1>Nuestros juegos</h1>
+
+    <section class="games-grid">
+      <article class="game-card">
+        <img src="img/games/juego1.png" alt="Nombre del juego">
+        <h2>Viceryon: Echoes of the void</h2>
+        <p>Juego de acción con narrativa oscura.</p>
+        <p class="precio">$3500 ARS</p>
+        <button onclick="agregarAlCarrito('Viceryon: Echoes of the void', 1000)">
+  Agregar al carrito
+</button>
+
+      </article>
+
+      <article class="game-card">
+        <img src="img/games/juego2.png" alt="Sombras del Monte">
+
+        <h2>Sombras del monte</h2>
+       <p class="descripcion">
+    Aventura oscura basada en leyendas rurales del norte argentino.
+  </p>
+
+  <p class="precio">$2800 ARS</p>
+      <button onclick="agregarAlCarrito('proyecto futuro', 1500)">
+  Agregar al carrito
+</button>
+
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Rutacero Games</p>
+  </footer>
+
+</body>
+</html>
