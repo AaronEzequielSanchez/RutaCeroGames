@@ -86,3 +86,31 @@ en un sitio web funcional y bien estructurado.
 ---
 
 ## 📂 Estructura del proyecto
+
+---
+
+## 📘 Documentación
+
+El proyecto cuenta con documentación detallada en formato PDF donde se explica:
+
+- El funcionamiento del HTML
+- El uso del CSS y el diseño responsive
+- La lógica del JavaScript y el carrito de compras
+
+La documentación fue realizada con fines académicos para facilitar el estudio
+y la comprensión del código.
+
+---
+
+## ✅ Estado del proyecto
+
+✔ Proyecto finalizado  
+✔ Funcional  
+✔ Presentado y aprobado  
+
+---
+
+## 📌 Notas finales
+
+Este proyecto fue desarrollado con fines educativos.
+No representa un producto comercial real.
